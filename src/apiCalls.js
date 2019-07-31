@@ -2,7 +2,7 @@ export const fetchRescueAnimals = () => {
   return fetch('http://localhost:3001/api/v1/rescue-animals')
     .then(res => {
       if(!res.ok) {
-        return  ('Error fethcing rescue animals');
+        return  'Error';
       } else {
         return res.json()
       }
@@ -10,10 +10,10 @@ export const fetchRescueAnimals = () => {
 }
 
 export const fetchDonations = () => {
-  return fetch('http://localhost:3001/api/v1/donations')
+  return fetch('http://localhost:3001/api/v1/donation')
     .then(res => {
       if(!res.ok) {
-        return  ('Error fethcing donation');
+        return 'Error';
       } else {
         return res.json()
       }

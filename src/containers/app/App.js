@@ -15,8 +15,8 @@ class App extends Component {
 
   componentDidMount() {
     fetchRescueAnimals().then(data =>{
-        if (data === 'Error fethcing rescue animals') {
-          this.setState({hasErrored: 'Error fethcing rescue animals'})
+        if (data === 'Error') {
+          this.setState({hasErrored: 'Error Fethcing Animals Data'})
           this.setState({isLoading: false})
         } else {
           
@@ -25,8 +25,8 @@ class App extends Component {
       })
 
       fetchDonations().then(data =>{
-        if (data === 'Error fethcing donation') {
-          this.setState({hasErrored: 'Error fethcing donation'})
+        if (data === 'Error') {
+          this.setState({hasErrored: 'Error Fetching Donation Data!'})
           this.setState({isLoading: false})
         } else {
           
@@ -48,11 +48,11 @@ class App extends Component {
         </header>
        
         <main className="app-main">
-          { !isLoading ? hasErrored :
-          <>
-          <AnimalsContainer />
-          <DonationContainer />
-          </>
+          { !isLoading ? <h3 className="error-msg">{hasErrored}</h3> :
+            <>
+              <AnimalsContainer />
+              <DonationContainer />
+            </>
           }
         </main>
       </section>
