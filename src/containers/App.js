@@ -5,8 +5,13 @@ import { setRescueAnimalData } from '../actions';
 import { fetchRescueAnimals } from '../apiCalls';
 
 class App extends Component {
-  render() {
 
+
+  componentDidMount() {
+    fetchRescueAnimals()
+  }
+
+  render() {
     return (
       <div className="App">
   
@@ -15,4 +20,6 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = dispatch =>
+
+export default connect(null, null)(App);
