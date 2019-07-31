@@ -8,7 +8,9 @@ class App extends Component {
 
 
   componentDidMount() {
-    fetchRescueAnimals()
+    fetchRescueAnimals().then(data =>
+      this.props.handleSetRescueAnimalData(data)
+      )
   }
 
   render() {
@@ -20,6 +22,8 @@ class App extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = dispatch => ({
+  handleSetRescueAnimalData: data => dispatch(setRescueAnimalData(data))
+})
 
-export default connect(null, null)(App);
+export default connect(null, mapDispatchToProps)(App);
