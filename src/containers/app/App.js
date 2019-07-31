@@ -9,7 +9,7 @@ import AddDonation from '../addDonation/AddDonation';
 
 class App extends Component {
   state = {
-    isLoading: false,
+    isLoading: true,
     hasErrored: '',
   }
 
@@ -17,8 +17,9 @@ class App extends Component {
     fetchRescueAnimals().then(data =>{
         if (data === 'Error fethcing rescue animals') {
           this.setState({hasErrored: 'Error fethcing rescue animals'})
+          this.setState({isLoading: false})
         } else {
-          this.setState({isLoading: true})
+          
           return this.props.handleSetRescueAnimalData(data)
         }
       })
@@ -26,8 +27,9 @@ class App extends Component {
       fetchDonations().then(data =>{
         if (data === 'Error fethcing donation') {
           this.setState({hasErrored: 'Error fethcing donation'})
+          this.setState({isLoading: false})
         } else {
-          this.setState({isLoading: true})
+          
           return this.props.handleSetDonationData(data)
         }
       })
@@ -36,17 +38,23 @@ class App extends Component {
   }
 
   render() {
+    const { isLoading, hasErrored } = this.state;
+    console.log(isLoading)
     return (
       <section className="App">
         <header>
           <h1>Animal Rescue</h1>
           <AddDonation />
         </header>
+       
         <main className="app-main">
+          { !isLoading ? hasErrored :
+          <>
           <AnimalsContainer />
           <DonationContainer />
+          </>
+          }
         </main>
-          
       </section>
     );
   }
