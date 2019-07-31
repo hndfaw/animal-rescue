@@ -3,6 +3,7 @@ import '../App.css';
 import { connect } from 'react-redux';
 import { setRescueAnimalData } from '../actions';
 import { fetchRescueAnimals } from '../apiCalls';
+import  AnimalsContainer  from './AnimalsContainer';
 
 class App extends Component {
   state = {
@@ -23,9 +24,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-  
-      </div>
+      <section className="App">
+          <AnimalsContainer />
+      </section>
     );
   }
 }
