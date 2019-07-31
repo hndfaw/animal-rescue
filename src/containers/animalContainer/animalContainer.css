@@ -12,13 +12,15 @@
 .animal-card-container {
   border: 1px solid gray;
   width: 220px;
-  height: 330px;
+  height: 322px;
   margin: 5px;
+  box-shadow: 0 0 7px 2px rgba(0,0,0,0.3);
 }
 
 .animal-card-img {
-  width: 220px;
+  width: 218px;
   margin-bottom: 10px;
+  height: 130px;
 }
 
 .animal-card-name {
@@ -27,5 +29,6 @@
 
 .animal-card-description {
   font-size: 12px;
-  margin-top: 10px
+  margin-top: 20px;
+  padding: 0px 5px;
 }

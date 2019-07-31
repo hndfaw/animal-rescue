@@ -16,7 +16,7 @@ class App extends Component {
   componentDidMount() {
     fetchRescueAnimals().then(data =>{
         if (data === 'Error') {
-          this.setState({hasErrored: 'Error Fethcing Animals Data'})
+          this.setState({hasErrored: 'Error Fethcing Animals Data!'})
           this.setState({isLoading: false})
         } else {
           
