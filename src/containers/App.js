@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import { connect } from 'react-redux';
 import { setRescueAnimalData, setDonationData } from '../actions';
-import { fetchRescueAnimals } from '../apiCalls';
+import { fetchRescueAnimals, fetchDonations } from '../apiCalls';
 import  AnimalsContainer  from './animalContainer/AnimalsContainer';
 
 class App extends Component {
@@ -18,6 +18,15 @@ class App extends Component {
         } else {
           this.setState({isLoading: true})
           return this.props.handleSetRescueAnimalData(data)
+        }
+      })
+
+      fetchDonations().then(data =>{
+        if (data === 'Error fethcing donation') {
+          this.setState({hasErrored: 'Error fethcing donation'})
+        } else {
+          this.setState({isLoading: true})
+          return this.props.handleSetDonationData(data)
         }
       })
 
