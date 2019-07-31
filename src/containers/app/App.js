@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { connect } from 'react-redux';
-import { setRescueAnimalData, setDonationData } from '../actions';
-import { fetchRescueAnimals, fetchDonations } from '../apiCalls';
-import  AnimalsContainer  from './animalContainer/AnimalsContainer';
+import { setRescueAnimalData, setDonationData } from '../../actions';
+import { fetchRescueAnimals, fetchDonations } from '../../apiCalls';
+import  AnimalsContainer  from '../animalContainer/AnimalsContainer';
+import DonationContainer from '../donationContainer/DonationContainer'
 
 class App extends Component {
   state = {
@@ -38,7 +39,11 @@ class App extends Component {
   render() {
     return (
       <section className="App">
+        <main className="app-main">
+          <DonationContainer />
           <AnimalsContainer />
+        </main>
+          
       </section>
     );
   }

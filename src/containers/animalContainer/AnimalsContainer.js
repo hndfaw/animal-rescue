@@ -18,9 +18,9 @@ class AnimalsContainer extends Component {
       )
     })
     return (
-      <main className="main-animal-container">
+      <section className="main-animal-container">
         {animalCard}
-      </main>
+      </section>
     )
   }
 }
