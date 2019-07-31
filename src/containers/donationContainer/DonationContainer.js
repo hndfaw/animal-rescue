@@ -10,7 +10,7 @@ class DonationContainer extends Component {
 
       return (
         <div key={donation.id} className="donation-card-container">
-            <p className="donation-detail"><span>{donation.name}</span>recently donated <span>${donation.donation}</span></p>
+            <p className="donation-detail"><span>{donation.name}</span> recently donated <span>${donation.donation}</span></p>
         </div>
       )
     })
