@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { connect } from 'react-redux';
-import { setRescueAnimalData } from '../actions';
+import { setRescueAnimalData, setDonationData } from '../actions';
 import { fetchRescueAnimals } from '../apiCalls';
 import  AnimalsContainer  from './animalContainer/AnimalsContainer';
 
@@ -20,6 +20,10 @@ class App extends Component {
           return this.props.handleSetRescueAnimalData(data)
         }
       })
+
+
+
+      // handleSetDonationData
   }
 
   render() {
@@ -32,7 +36,8 @@ class App extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  handleSetRescueAnimalData: data => dispatch(setRescueAnimalData(data))
+  handleSetRescueAnimalData: data => dispatch(setRescueAnimalData(data)),
+  handleSetDonationData: data => dispatch(setDonationData(data))
 })
 
 export default connect(null, mapDispatchToProps)(App);

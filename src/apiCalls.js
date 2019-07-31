@@ -8,3 +8,14 @@ export const fetchRescueAnimals = () => {
       }
     })
 }
+
+export const fetchDonations = () => {
+  return fetch('http://localhost:3001/api/v1/donations')
+    .then(res => {
+      if(!res.ok) {
+        return  ('Error fethcing donation');
+      } else {
+        return res.json()
+      }
+    })
+}
