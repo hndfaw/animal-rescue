@@ -1,8 +1,8 @@
 export const fetchRescueAnimals = () => {
-  return fetch('http://localhost:3001/api/v1/rescue-animals')
+  return fetch('http://localhost:3001/api/v1/rescue-animal')
     .then(res => {
       if(!res.ok) {
-        throw Error ('Error fethcing rescue animals...');
+        return  ('Error fethcing rescue animals');
       } else {
         return res.json()
       }
