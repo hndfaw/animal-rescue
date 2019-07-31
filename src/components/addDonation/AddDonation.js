@@ -32,7 +32,7 @@ class AddDonation extends Component {
 
   render() {
     return (
-      <form>
+      <form className="add-donation">
         <input placeholder="Name" type="text" value={this.state.name} name="name" onChange={this.handleOnChange} />
         <input placeholder="Donation" type="text" value={this.state.donation} name="donation" onChange={this.handleOnChange} />
         <button onClick={this.submitDonation}>Donate!</button>

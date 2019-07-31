@@ -1,0 +1,27 @@
+.add-donation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 70px;
+  margin-top: 10px;
+}
+
+input {
+  border-radius: 3px;
+  border: 1px solid green;
+  height: 20px;
+  padding-left: 5px;
+}
+
+button {
+  border-radius: 50px;
+  border: 1px solid #fff;
+  height: 20px;
+  padding-left: 5px;
+  cursor: pointer;
+  background: rgb(47, 139, 47);
+  color: #fff;
+}

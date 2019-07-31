@@ -5,7 +5,7 @@ import { setRescueAnimalData, setDonationData } from '../../actions';
 import { fetchRescueAnimals, fetchDonations, fetchAddDonation } from '../../apiCalls';
 import  AnimalsContainer  from '../animalContainer/AnimalsContainer';
 import DonationContainer from '../donationContainer/DonationContainer';
-import AddDonation from '../addDonation/AddDonation';
+import AddDonation from '../../components/addDonation/AddDonation';
 
 class App extends Component {
   state = {
