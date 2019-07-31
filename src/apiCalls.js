@@ -19,3 +19,18 @@ export const fetchDonations = () => {
       }
     })
 }
+
+export const fetchAddDonation = newDonation => {
+  return fetch('http://localhost:3001/api/v1/donations',{
+    method: 'POST',
+    headers: {'content-type' : 'application/json'},
+    body: JSON.stringify(newDonation)
+  })
+    .then(res => {
+      if(!res.ok) {
+        return  ('Error fethcing donation');
+      } else {
+        return res.json()
+      }
+    })
+}

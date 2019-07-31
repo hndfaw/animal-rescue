@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { setRescueAnimalData, setDonationData } from '../../actions';
 import { fetchRescueAnimals, fetchDonations } from '../../apiCalls';
 import  AnimalsContainer  from '../animalContainer/AnimalsContainer';
-import DonationContainer from '../donationContainer/DonationContainer'
+import DonationContainer from '../donationContainer/DonationContainer';
+import AddDonation from '../addDonation/AddDonation';
 
 class App extends Component {
   state = {
@@ -39,7 +40,7 @@ class App extends Component {
       <section className="App">
         <header>
           <h1>Animal Rescue</h1>
-          
+          <AddDonation />
         </header>
         <main className="app-main">
           <AnimalsContainer />
