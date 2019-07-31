@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-animal-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.animal-card-container {
+  border: 1px solid gray;
+  width: 220px;
+  height: 330px;
+  margin: 5px;
+}
+
+.animal-card-img {
+  width: 220px;
+  margin-bottom: 10px;
+}
+
+.animal-card-name {
+  padding-bottom: 10px
+}
+
+.animal-card-description {
+  font-size: 12px;
+  margin-top: 10px
+}
