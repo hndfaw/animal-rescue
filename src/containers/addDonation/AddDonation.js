@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { fetchAddDonation, fetchDonations } from '../../apiCalls';
-import { setDonationData } from '../../actions';
-import { connect } from 'react-redux';
+import './addDonation.css';
 
 class AddDonation extends Component {
   state = {
@@ -22,11 +20,8 @@ class AddDonation extends Component {
       name,
       donation
     }
-    fetchAddDonation(newDonation).then(() =>
-      fetchDonations().then(data => 
-        this.props.handleSetDonationData(data)
-        )
-    )
+
+    this.props.addNewDonation(newDonation)
     this.clearInput()
   }
 
@@ -46,8 +41,5 @@ class AddDonation extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  handleSetDonationData: data => dispatch(setDonationData(data))
-})
 
-export default  connect(null, mapDispatchToProps)(AddDonation)
+export default  AddDonation

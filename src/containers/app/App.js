@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
 import { setRescueAnimalData, setDonationData } from '../../actions';
-import { fetchRescueAnimals, fetchDonations } from '../../apiCalls';
+import { fetchRescueAnimals, fetchDonations, fetchAddDonation } from '../../apiCalls';
 import  AnimalsContainer  from '../animalContainer/AnimalsContainer';
 import DonationContainer from '../donationContainer/DonationContainer';
 import AddDonation from '../addDonation/AddDonation';
@@ -34,17 +34,24 @@ class App extends Component {
         }
       })
 
+  }
+
+  addNewDonation = newDonation => {
+    fetchAddDonation(newDonation).then(() =>
+      fetchDonations().then(data => 
+        this.props.handleSetDonationData(data)
+        )
+    )
 
   }
 
   render() {
     const { isLoading, hasErrored } = this.state;
-    console.log(isLoading)
     return (
       <section className="App">
-        <header>
+        <header className="header">
           <h1>Animal Rescue</h1>
-          <AddDonation />
+          <AddDonation addNewDonation={this.addNewDonation}/>
         </header>
        
         <main className="app-main">

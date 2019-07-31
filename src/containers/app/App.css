@@ -25,6 +25,7 @@
 
 .app-main{
   display: flex;
+  padding: 10px;
 }
 
 .error-msg {
@@ -37,3 +38,10 @@
   border-radius: 3px;
   padding: 5px;
 }
+
+.header {
+  width: 100vw;
+  height: 100px;
+  background: rgb(97, 153, 97);
+}
+
