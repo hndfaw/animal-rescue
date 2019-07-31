@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../App.css';
+import './App.css';
 import { connect } from 'react-redux';
 import { setRescueAnimalData, setDonationData } from '../../actions';
 import { fetchRescueAnimals, fetchDonations } from '../../apiCalls';
@@ -32,16 +32,18 @@ class App extends Component {
       })
 
 
-
-      // handleSetDonationData
   }
 
   render() {
     return (
       <section className="App">
+        <header>
+          <h1>Animal Rescue</h1>
+          
+        </header>
         <main className="app-main">
-          <DonationContainer />
           <AnimalsContainer />
+          <DonationContainer />
         </main>
           
       </section>
